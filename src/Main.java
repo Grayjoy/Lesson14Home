@@ -1,5 +1,3 @@
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class Main {
@@ -8,27 +6,12 @@ public class Main {
     private static Person person = new Person(4, "Danyl", "Yarov");
 
     public static void main(String[] args) {
-        groupName();
-        lastWeekLessons();
+        group.groupName();
+        group.lastWeekLessons();
         person.listStudents();
         person.addStudents(consoleAddName(), consoleAddSurName());
         person.searchSurName();
         person.deleteStudent();
-    }
-
-    public static void groupName() {
-        System.out.println("Group Name: " + group.getCourseName() + " " + group.getCourseStartDay() + "." +
-                group.getCourseStartMonth() + "." + group.getCourseStartYears());
-    }
-
-    public static void lastWeekLessons() {
-        int valueWeek = group.getTotalAmountLessons() / group.getTotalAmountLessonsPerWeek() - 1;
-
-        LocalDate startDate = LocalDate.of(group.getCourseStartYears(), group.getCourseStartMonth(), group.getCourseStartDay());
-        LocalDate lastWeek = startDate.plus(valueWeek, ChronoUnit.WEEKS);
-
-        System.out.println("Last Week Starts : " + lastWeek);
-
     }
 
     public static String consoleAddName() {

@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,30 +22,20 @@ public class Group {
         this.totalAmountLessonsPerWeek = totalAmountLessonsPerWeek;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public void groupName() {
+        System.out.println("Group Name: " + courseName + " " + courseStartDay + "." +
+                courseStartMonth + "." + courseStartYears);
     }
 
-    public int getCourseStartDay() {
-        return courseStartDay;
-    }
+    public void lastWeekLessons() {
+        int valueWeek = totalAmountLessons / totalAmountLessonsPerWeek - 1;
 
-    public int getCourseStartMonth() {
-        return courseStartMonth;
-    }
+        LocalDate startDate = LocalDate.of(courseStartYears, courseStartMonth, courseStartDay);
+        LocalDate lastWeek = startDate.plus(valueWeek, ChronoUnit.WEEKS);
 
-    public int getCourseStartYears() {
-        return courseStartYears;
-    }
+        System.out.println("Last Week Starts : " + lastWeek);
 
-    public int getTotalAmountLessons() {
-        return totalAmountLessons;
     }
-
-    public int getTotalAmountLessonsPerWeek() {
-        return totalAmountLessonsPerWeek;
-    }
-
     public List<Person> getPersonList() {
         return personList;
     }
