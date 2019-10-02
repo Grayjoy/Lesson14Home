@@ -22,11 +22,6 @@ public class Group {
         this.totalAmountLessonsPerWeek = totalAmountLessonsPerWeek;
     }
 
-    public void groupName() {
-        System.out.println("Group Name: " + courseName + " " + courseStartDay + "." +
-                courseStartMonth + "." + courseStartYears);
-    }
-
     public void lastWeekLessons() {
         int valueWeek = totalAmountLessons / totalAmountLessonsPerWeek - 1;
 
@@ -36,6 +31,23 @@ public class Group {
         System.out.println("Last Week Starts : " + lastWeek);
 
     }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public int getCourseStartDay() {
+        return courseStartDay;
+    }
+
+    public int getCourseStartMonth() {
+        return courseStartMonth;
+    }
+
+    public int getCourseStartYears() {
+        return courseStartYears;
+    }
+
     public List<Person> getPersonList() {
         return personList;
     }

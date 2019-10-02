@@ -15,18 +15,10 @@ public class Person {
         this.surName = surName;
     }
 
-    public void add() {
-        Person person = new Person(1, "Maks", "Ealon");
-        Person person1 = new Person(2, "Aleks", "Hroup");
-        Person person2 = new Person(3, "David", "Grat");
-
-        group.getPersonList().add(person);
+    public void listStudents(Person person1,Person person2,Person person3) {
         group.getPersonList().add(person1);
         group.getPersonList().add(person2);
-    }
-
-    public void listStudents() {
-        add();
+        group.getPersonList().add(person3);
         System.out.println("List students: " + group.getPersonList());
     }
 
